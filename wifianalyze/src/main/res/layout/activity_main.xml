@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_gravity="center"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/access_points"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Nearby Access Points"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <Button
+        android:id="@+id/ssid"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SSID"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <Button
+        android:id="@+id/security"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="SECURITY"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <Button
+        android:id="@+id/signal_strength"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Signal Strength"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <Button
+        android:id="@+id/mac_address"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Mac Address"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+    <Button
+        android:id="@+id/best_channel"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Best Channel"
+        android:layout_marginTop="30dp"
+        tools:layout_editor_absoluteX="122dp"
+        tools:layout_editor_absoluteY="134dp" />
+
+
+</LinearLayout>
