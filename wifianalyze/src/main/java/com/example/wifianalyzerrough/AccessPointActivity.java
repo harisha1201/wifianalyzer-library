@@ -40,6 +40,7 @@ public class AccessPointActivity extends AppCompatActivity {
 
 
 
+
         Button buttonScan = findViewById(R.id.scanBtn);
         wifiManager = (WifiManager) getApplicationContext().getSystemService(Context.WIFI_SERVICE);
 
