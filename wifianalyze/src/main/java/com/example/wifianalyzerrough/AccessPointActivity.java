@@ -29,7 +29,7 @@ public class AccessPointActivity extends AppCompatActivity {
     String fromBtnValue;
     private ListView wifiList;
     private WifiManager wifiManager;
-    private final int MY_PERMISSIONS_ACCESS_COARSE_LOCATION = 1;
+    private final int MY_PERMISSIONS_ACCESS_FINE_LOCATION = 1;
     WifiReceiver receiverWifi;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,9 +50,9 @@ public class AccessPointActivity extends AppCompatActivity {
             wifiManager.setWifiEnabled(true);
         }
         buttonScan.setOnClickListener(v -> {
-            if (ActivityCompat.checkSelfPermission(AccessPointActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION)!= PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.checkSelfPermission(AccessPointActivity.this, Manifest.permission.ACCESS_FINE_LOCATION)!= PackageManager.PERMISSION_GRANTED) {
                 ActivityCompat.requestPermissions(
-                        AccessPointActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
+                        AccessPointActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_ACCESS_FINE_LOCATION);
             } else {
                 wifiManager.startScan();
             }
@@ -129,9 +129,9 @@ public class AccessPointActivity extends AppCompatActivity {
     private void getWifi() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             //Toast.makeText(AccessPointActivity.this, "version> = marshmallow", Toast.LENGTH_SHORT).show();
-            if (ContextCompat.checkSelfPermission(AccessPointActivity.this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            if (ContextCompat.checkSelfPermission(AccessPointActivity.this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                // Toast.makeText(AccessPointActivity.this, "location turned off", Toast.LENGTH_SHORT).show();
-                ActivityCompat.requestPermissions(AccessPointActivity.this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, MY_PERMISSIONS_ACCESS_COARSE_LOCATION);
+                ActivityCompat.requestPermissions(AccessPointActivity.this, new String[]{Manifest.permission.ACCESS_FINE_LOCATION}, MY_PERMISSIONS_ACCESS_FINE_LOCATION);
             } else {
                 //Toast.makeText(AccessPointActivity.this, "location turned on", Toast.LENGTH_SHORT).show();
                 wifiManager.startScan();
@@ -150,7 +150,7 @@ public class AccessPointActivity extends AppCompatActivity {
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         switch (requestCode) {
-            case MY_PERMISSIONS_ACCESS_COARSE_LOCATION:
+            case MY_PERMISSIONS_ACCESS_FINE_LOCATION:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 Toast.makeText(AccessPointActivity.this, "permission granted", Toast.LENGTH_SHORT).show();
                 wifiManager.startScan();
